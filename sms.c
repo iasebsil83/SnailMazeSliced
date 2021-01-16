@@ -1,49 +1,33 @@
 /*
-	------------------- SNAIL MAZE SLICED -------------------
-	|  Remake of the built-in game of SEGA Master System	|
-	|				SEGA BIOS Snail Maze 					|
-	|														|
-	|   Game realised for ISEN Engineering - Challenge		|
-	|														|
-	|	  The Maze is now displayed from the side of the 	|
-	|	snail as it should be regarding the snail's sprite  |
-	|		Pressing the key S will show you the map 		|
-	|			   from the top of the maze.				|
-	|														|
-	|						Enjoy !							|
-	|												 By I.A.| (Sebastien SILVANO)
-	---------------------------------------------------------
-
-	In there is any issue executing the game, please report to i.a.sebsil83@gmail.com
+-------------------- SNAIL MAZE SLICED --------------------
+|      Remake of the built-in game of SEGA Master System  |
+|  BIOS Snail Maze.                                       |
+|                                                         |
+|   Game realised for ISEN Engineering - Challenge        |
+|                                                         |
+|     The Maze is now displayed from the side of the      |
+| snail only.                                             |
+|                                                         |
+| Pressing key S will show you the map. (debug or cheat)  |
+|                                                         |
+| Enjoy !                                                 |
+|                                                         |
+| Contact     : i.a.sebsil83@gmail.com                    |
+| Youtube     : https://www.youtube.com/user/IAsebsil83   |
+| GitHub repo : https://github.com/iasebsil83             |
+|                                                         |
+| Let's Code !                                     By I.A.|
+-----------------------------------------------------------
 */
 
 
 
-//===================== DEFINITION =========================
-
-#define HEIGHT 7
-#define LENGTH 40
-#define END_X 39
-#define END_Y 2
 
 
 
-// ===================== FUNCTIONS ========================
 
-//Usefull functions
-int inZone(int x,int y, int xmin,int ymin, int xmax,int ymax){
-	if(xmax < xmin){
-		int temp = xmin;
-		xmin = xmax;
-		xmax = temp;
-	}
-	if(ymax < ymin){
-		int temp = ymin;
-		ymin = ymax;
-		ymax = temp;
-	}
-	return (x <= xmax && x >= xmin && y <= ymax && y >= ymin);
-}
+
+
 
 
 
@@ -57,14 +41,23 @@ int inZone(int x,int y, int xmin,int ymin, int xmax,int ymax){
 #include "GfxLib.h" //graphics
 #include "ESLib.h"  //To use valeurAleatoire()
 
-//game files
-#include "keys.c"
-#include "click.c"
-#include "display.c"
 
 
 
-// ==================== DECLARATIONS =======================
+
+
+
+
+
+
+
+
+//===================== DECLARATIONS =========================
+
+#define HEIGHT 7
+#define LENGTH 40
+#define END_X 39
+#define END_Y 2
 
 //game vars
 static char menu = 's'; //s:start_menu, m:maze, e:end_menu
@@ -92,8 +85,51 @@ img snailL;
 
 
 
+
+
+
+
+
+
+
+
+
+// ===================== FUNCTIONS ========================
+
+//Usefull functions
+int inZone(int x,int y, int xmin,int ymin, int xmax,int ymax){
+	if(xmax < xmin){
+		int temp = xmin;
+		xmin = xmax;
+		xmax = temp;
+	}
+	if(ymax < ymin){
+		int temp = ymin;
+		ymin = ymax;
+		ymax = temp;
+	}
+	return (x <= xmax && x >= xmin && y <= ymax && y >= ymin);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // =================== MAIN EXECUTION ======================
 
+//game files
+#include "keys.c"
+#include "click.c"
+#include "display.c"
+
+//main
 int main(int argc, char **argv){
 	//init graphics
 	initialiseGfx(argc, argv);

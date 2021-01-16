@@ -98,7 +98,7 @@ typedef void (*FonctionQuatreInts)(int a, int b, int c, int d);
 typedef void (*FonctionCharDeuxInts)(unsigned char a, int b, int c);
 
 /* La constante Pi */
-static const double Pi2 = 2*3.14159265358979323846;
+//static const double Pi2 = 2*3.14159265358979323846;
 
 /* Memorise le dernier caractere clavier qui a ete genere */
 static GLubyte sCaractereClavier = ' ';
