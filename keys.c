@@ -3,7 +3,7 @@
 void keyEvent(char k, char* menu, char map[HEIGHT][LENGTH], int* px, int* py, bool* upViewPoint, bool* right){
 	switch(*menu){
 		case 's': //start_menu
-			if(k == 'q'){
+			if(k == 'q' || k == 'Q'){
 				termineBoucleEvenements();
 				exit(1);
 			}
@@ -41,6 +41,7 @@ void keyEvent(char k, char* menu, char map[HEIGHT][LENGTH], int* px, int* py, bo
 						}
 					}
 				break;
+				case 'M':
 				case 'm':
 					*upViewPoint = !*upViewPoint;
 				break;
@@ -49,7 +50,7 @@ void keyEvent(char k, char* menu, char map[HEIGHT][LENGTH], int* px, int* py, bo
 				*menu = 'e';
 		break;
 		case 'e': //end_menu
-			if(k == 'q'){
+			if(k == 'q' || k == 'Q'){
 				termineBoucleEvenements();
 				exit(1);
 			}
