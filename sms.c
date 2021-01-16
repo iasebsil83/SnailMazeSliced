@@ -310,12 +310,15 @@ void S2DE_event(int event){
 					//display the whole maze
 					for(unsigned int dx=0; dx < LENGTH; dx++){
 
-						//whole terrain selected
-						for(unsigned int dy=0; dy < HEIGHT; dy++)
-							showCase(dy,dx);
+						if(upViewPoint){
+							//whole terrain selected
+							for(unsigned int dy=0; dy < HEIGHT; dy++)
+								showCase(dy,dx);
+						}
 
 						//only the concerned line
-						showCase(py,dx);
+						else
+							showCase(py,dx);
 					}
 
 					//player
