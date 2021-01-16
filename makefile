@@ -1,23 +1,16 @@
 #executable
-run: sms.o libisentlib.a
-	gcc -Wall -o run sms.o libisentlib.a -lm -lglut -lGL -lX11
-	rm -f *.o libisentlib.a
+run: sms.o S2DE.o
+	gcc -Wall -o run sms.o S2DE.o -lm -lglut -lGL -lX11
+	rm -f *.o
 
 
 
 #sms
-sms.o: sms.c GfxLib.h ESLib.h
-	gcc -Wall -c sms.c -O2
+sms.o: sms.c S2DE.h img.c
+	gcc -Wall -c sms.c -O2 -I/usr/include/GL
 
 
 
-#GfxLib libraries
-libisentlib.a: ESLib.o GfxLib.o
-	ar r libisentlib.a ESLib.o GfxLib.o
-	ranlib libisentlib.a
-
-ESLib.o: ESLib.c ESLib.h ErreurLib.h
-	gcc -Wall -O2 -c ESLib.c
-
-GfxLib.o: GfxLib.c GfxLib.h ESLib.h
-	gcc -Wall -O2 -c GfxLib.c -I/usr/include/GL
+#S2DE
+S2DE.o: S2DE.c S2DE.h
+	gcc -Wall -c S2DE.c -O2 -I/usr/include/GL
