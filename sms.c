@@ -49,7 +49,7 @@
 
 
 //graphics
-#include "S2DE.h"
+#include "src/S2DE.h"
 
 
 
@@ -457,8 +457,8 @@ void S2DE_event(int event){
 int main(int argc, char **argv){
 
 	//set textures
-	snailR = readRGBA2ARVB("SnailR.rgba",snailR);
-	snailL = readRGBA2ARVB("SnailL.rgba",snailL);
+	snailR = readRGBA2ARVB("sprites/SnailR.rgba", snailR);
+	snailL = readRGBA2ARVB("sprites/SnailL.rgba", snailL);
 
 	//init graphics
 	S2DE_init(argc,argv, "Snail Maze Slice", MAXL,MAXH);
