@@ -34,12 +34,12 @@
 // ==================== IMPORTATIONS =======================
 
 //standard files
-#include <stdlib.h> //To use exit()
-#include <stdio.h>  //To use printf()
+#include <stdlib.h>
+#include <stdio.h>
 
 //graphic files
-#include "GfxLib.h" //graphics
-#include "ESLib.h"  //To use valeurAleatoire()
+#include "src/GfxLib.h" //graphics
+#include "src/ESLib.h"
 
 
 
@@ -145,11 +145,11 @@ void gestionEvenement(EvenementGfx evenement){
 			//snail seeing right
 			snailR.width = 16;	snailR.height = 16;
 			snailR.data = NULL;
-			snailR = readRGBA2ARVB("SnailR.rgba",snailR);
+			snailR = readRGBA2ARVB("sprites/SnailR.rgba",snailR);
 			//snail seeing left
 			snailL.width = 16;	snailL.height = 16;
 			snailL.data = NULL;
-			snailL = readRGBA2ARVB("SnailL.rgba",snailL);
+			snailL = readRGBA2ARVB("sprites/SnailL.rgba",snailL);
 		break;
 		case Temporisation:
 		break;
