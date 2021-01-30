@@ -59,13 +59,13 @@ int *BVRA2ARVB(int largeur, int hauteur, const unsigned char *donnees){
 
 	ptrPixel = pixels;
 	ptrDonnees = donnees;
-	for(index = largeur*hauteur; index != 0; --index){ //On parcourt tous les pixels de l'image
+	for(index = largeur*hauteur; index != 0; --index){
 		ptrPixel[0] = ptrDonnees[0];
 		ptrPixel[1] = ptrDonnees[2];
 		ptrPixel[2] = ptrDonnees[1];
 		ptrPixel[3] = ptrDonnees[3];
-		ptrDonnees += 4; /* On passe a la premiere composante du pixel suivant */
-		ptrPixel += 4; /* On passe au pixel suivant */
+		ptrDonnees += 4;
+		ptrPixel += 4;
 	}
 	return (int*)pixels;
 }
