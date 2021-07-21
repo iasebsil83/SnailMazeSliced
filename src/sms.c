@@ -8,7 +8,7 @@
 |     The Maze is now displayed from the side of the      |
 | snail only.                                             |
 |                                                         |
-| Pressing key S will show you the map. (debug or cheat)  |
+| Pressing key M will show you the map. (debug or cheat)  |
 |                                                         |
 | Enjoy !                                                 |
 |                                                         |
@@ -38,8 +38,8 @@
 #include <stdio.h>
 
 //graphic files
-#include "src/GfxLib.h" //graphics
-#include "src/ESLib.h"
+#include "../lib/GfxLib.h" //graphics
+#include "../lib/ESLib.h"
 
 
 

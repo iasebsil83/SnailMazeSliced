@@ -6,8 +6,8 @@ run: sms.o libisentlib.a
 
 
 #sms
-sms.o: sms.c src/GfxLib.h src/ESLib.h
-	gcc -Wall -c sms.c -O2
+sms.o: src/sms.c lib/GfxLib.h lib/ESLib.h
+	gcc -Wall -c src/sms.c -O2
 
 
 
@@ -16,8 +16,8 @@ libisentlib.a: ESLib.o GfxLib.o
 	ar r libisentlib.a ESLib.o GfxLib.o
 	ranlib libisentlib.a
 
-ESLib.o: src/ESLib.c src/ESLib.h src/ErreurLib.h
-	gcc -Wall -c src/ESLib.c -O2
+ESLib.o: lib/ESLib.c lib/ESLib.h lib/ErreurLib.h
+	gcc -Wall -c lib/ESLib.c -O2
 
-GfxLib.o: src/GfxLib.c src/GfxLib.h src/ESLib.h
-	gcc -Wall -c src/GfxLib.c -I/usr/include/GL -O2
+GfxLib.o: lib/GfxLib.c lib/GfxLib.h lib/ESLib.h
+	gcc -Wall -c lib/GfxLib.c -I/usr/include/GL -O2
