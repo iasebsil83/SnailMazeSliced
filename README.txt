@@ -1,1 +1,1 @@
-All you have to know about SnailMazeSliced is inside sms.c
+All you have to know about SnailMazeSliced is inside src/sms.c

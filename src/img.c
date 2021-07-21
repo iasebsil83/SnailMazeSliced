@@ -16,28 +16,12 @@
 
 
 
-
-
-
-
-
-
-
-
 // ---------------- DEFINITIONS ----------------
 struct IMG{
 	int width,height;
 	int* data;
 };
 typedef struct IMG img;
-
-
-
-
-
-
-
-
 
 
 

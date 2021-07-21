@@ -8,7 +8,7 @@
 |     The Maze is now displayed from the side of the      |
 | snail only.                                             |
 |                                                         |
-| Pressing key S will show you the map. (debug or cheat)  |
+| Pressing key M will show you the map. (debug or cheat)  |
 |                                                         |
 | Enjoy !                                                 |
 |                                                         |
@@ -31,14 +31,6 @@
 
 
 
-
-
-
-
-
-
-
-
 // ==================== IMPORTATIONS =======================
 
 //standard files
@@ -49,20 +41,12 @@
 
 
 //graphics
-#include "src/S2DE.h"
+#include "../lib/S2DE.h"
 
 
 
 //image utility
 #include "img.c"
-
-
-
-
-
-
-
-
 
 
 
@@ -136,14 +120,6 @@ static bool right = true;
 //textures
 img snailR = { .width = 16, .height = 16, .data = NULL};
 img snailL = { .width = 16, .height = 16, .data = NULL};
-
-
-
-
-
-
-
-
 
 
 
@@ -260,14 +236,6 @@ void showCase(int dy, int dx){
 
 
 
-
-
-
-
-
-
-
-
 // =================== MAIN EXECUTION ======================
 
 //S2DE events
@@ -297,7 +265,7 @@ void S2DE_event(int event){
 					//text : other
 					S2DE_setColor(255,255,255);
 					S2DE_setThickness(4);
-					S2DE_text("Snail      Sliced",0.417,40,270);
+					S2DE_text("Snail      Sliced",0.417,120,270);
 					S2DE_setThickness(3);
 					S2DE_text("Play",0.33,320,185);
 					S2DE_text("Exit",0.33,320,55);
@@ -421,7 +389,7 @@ void S2DE_event(int event){
 			S2DE_refresh();
 		break;
 
-		case S2DE_MOUSECLICK:
+		case S2DE_MOUSE_CLICK:
 			if(S2DE_mouseState == S2DE_MOUSE_PRESSED && S2DE_mouseButton == S2DE_LEFT_BUTTON){
 				switch(menu){
 					case MENU_START:
